@@ -1,0 +1,406 @@
+#mainGUITrim{
+	position: absolute;
+	 /* Background */
+	background: #2D3B83;
+ 
+/* Border bottom light */
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ 
+/* Inner top shadow */
+	-moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+ 
+/* Round corners */
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+	width:320px;
+	height:90px;
+	z-index: 2;
+}
+#mainGUI{
+	position: absolute;
+	background: white;
+ 
+/* Border bottom light */
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ 
+/* Inner top shadow */
+	-moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+ 
+/* Round corners */
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	width:310px;
+	height:80px;
+	z-index: 1;
+	top:5px;
+	left:5px;
+}
+#outputDiv{
+	position: absolute;
+	left: 500px;
+}
+
+#timeBox{
+	position: absolute;
+	width: 80px;
+	background-color: white;
+	left:10px;
+	top: 28px;
+	z-index: 2;
+	border: solid black 1px;
+	text-align: center;
+}
+#feetBox{
+	position: absolute;
+	width: 80px;
+	background-color: white;
+	left:200px;
+	top: 28px;
+	z-index: 1;
+	border: solid black 1px;
+	text-align: center;
+}
+#distanceBox{
+	position: absolute;
+	width: 80px;
+	background-color: white;
+	left:105px;
+	top: 28px;
+	z-index: 1;
+	border: solid black 1px;
+	text-align: center;
+}
+#textBox{
+	position: absolute;
+	width: 286px;
+	background-color: white;
+	left:10px;
+	top: 5px;
+	z-index: 1;
+	border: solid black 1px;
+	text-align: center;
+}
+
+#totalBox{
+	position: absolute;
+	width: 80px;
+	background-color: #E0E0E0;
+	left: 200px;
+	top: 53px;
+	z-index: 1;
+	border: solid black 1px;
+	text-align: center;
+}
+
+#totalMiBox{
+	position: absolute;
+	width: 80px;
+	background-color: #E0E0E0;
+	left: 105px;
+	top: 53px;
+	z-index: 1;
+	border: solid black 1px;
+	text-align: center;
+}
+
+#totalTimeBox{
+	position: absolute;
+	width: 80px;
+	background-color: #E0E0E0;
+	left: 10px;
+	top: 53px;
+	z-index: 1;
+	border: solid black 1px;
+	text-align: center;
+}
+
+#totalClear{
+	position: absolute;
+	width: 14px;
+	height:45px;
+	background-color: #2D3B83;
+	left: 282px;
+	top: 28px;
+	z-index: 1;
+	border: solid black 1px;
+	text-align: center;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #ffffff;
+	cursor: pointer;
+	vertical-align:middle;
+
+  line-height: 45px;
+}
+
+
+html, body, #map-canvas {
+	margin: 0;
+	padding: 0;
+    height: 480px;
+	width:320px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+body .tabs {
+	height: 460px;
+	width: 300px;
+	border-radius: 0 0 0 20px;
+	-moz-border-radius: 0 0 0 20px;
+	-webkit-border-radius: 0 0 0 20px;
+	-ms-border-radius: 0 0 0 20px;
+	-o-border-radius: 0 0 0 20px;
+	background-color: #ffffff;
+	box-shadow: 0 0 10px #000000 inset;
+	-moz-box-shadow: 0 0 10px #000000 inset;
+	-webkit-box-shadow: 0 0 10px #000000 inset;
+	-ms-box-shadow: 0 0 10px #000000 inset;
+	-o-box-shadow: 0 0 10px #000000 inset;
+	position: absolute;
+	top: 480px;
+	left: 0px;
+	z-index: 2;
+}
+body .tabs .image {
+	/*This Changes the box in which you can see each tab*/
+	width: 36px;
+	height: 38px;
+	position: relative;
+	/*This Changes the position of all the tabs*/
+	left: -10px;
+	top:-61px;
+	background-image: url("tabsappnew.png");
+	cursor: pointer;
+}
+
+body .tabs h3 {
+	font-size: 18pt;
+	position: absolute;
+	top: 10px;
+	left: 15px;
+}
+
+body .tabs .close {
+	padding: 5px;
+	margin: 0;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12pt;
+	color: #ffffff;
+	position: absolute;
+	top: 0;
+	right: 2px;
+	cursor: pointer;
+}
+
+body .tabs .list {
+	border: 2px solid #eeeeee;
+	position: absolute;
+	left: 15px;
+	top: 85px;
+	width: 225px;
+	height: 290px;
+	overflow: auto;
+	padding: 0;
+	background-color: #ffffff;
+}
+
+body .tabs .list p {
+	padding: 10px;
+	margin: 0;
+	font-size: 12pt;
+	border: 2px solid #eeeeee;
+	cursor: pointer;
+}
+
+body .tabs .list p span {
+	font-size: 10pt;
+	color: #555555;
+}
+
+body .tabs .list .selected {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+body .tabs .list .selected span {
+	color: #ffffff;
+}
+
+body .tabs .instructions {
+	position: absolute;
+	top: 40px;
+	left: 15px;
+}
+body #campus {
+	border: 10px solid #0668b3;
+}
+
+body #campus h3 {
+	color: #0668b3;
+}
+
+body #campus .image {
+	background-position: 110px 0px;
+  	left:196px; 
+}
+
+body #campus .close {
+	background-color: #0668b3;
+}
+
+body #campus .list .selected {
+	background-color: #0668b3;
+}
+
+body #women{
+	border: 10px solid #C0504D;
+}
+
+body #women h3 {
+	color: #C0504D;
+}
+
+body #women .image {
+	background-position: 147px 0px;
+	left:160px;
+}
+
+body #women .close {
+	background-color: #C0504D;
+}
+
+body #women .list .selected {
+	background-color: #C0504D;
+}
+
+body #men {
+	border: 10px solid #002060;
+}
+
+body #men h3 {
+	color: #002060;
+}
+
+body #men .image {
+	background-position: 185px 0px;
+	left:124px;
+}
+
+body #men .close {
+	background-color: #002060;
+}
+
+body #men .list .selected {
+	background-color: #002060;
+}
+
+body #married {
+	border: 10px solid #92D050;
+}
+
+body #married h3 {
+	color: #92D050;
+}
+
+body #married .image {
+	background-position: 0px 0px;
+	left:88px;
+}
+
+body #married .close {
+	background-color: #92D050;
+}
+
+body #married .list .selected {
+	background-color: #92D050;
+}
+
+
+body #history {
+	border: 10px solid #5C5C5C;
+}
+
+body #history h3 {
+	color: #5C5C5C;
+}
+
+body #history .image {
+	background-position: 36px 0px;
+	left:274px;
+}
+
+body #history .close {
+	background-color: #5C5C5C;
+}
+body #history .clear {
+	position: absolute;
+	background-color: #5C5C5C;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12pt;
+	color: #ffffff;
+	width: 120px;
+	left: 15px;
+	top:380px;
+	cursor: pointer;
+}
+
+body #history .list .selected {
+	background-color: #5C5C5C;
+}
+
+body #custom {
+	border: 10px solid #F19012;
+}
+
+body #custom h3 {
+	color: #F19012;
+}
+
+body #custom .image {
+	background-position: 73px 0px;
+	left:233px;
+}
+
+body #custom .close {
+	background-color: #F19012;
+}
+
+body #custom .list .selected {
+	background-color: #F19012;
+}
+
+#addButton{
+	padding: 5px;
+	padding-bottom: 12px;
+	padding-top: 13px;
+	color: white;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12pt;
+	background-color: #F19012;
+	position: absolute;
+	bottom: 10px;
+	left: 15px;
+	cursor: pointer;
+
+}
+#customAddress{
+	position: absolute;
+	bottom: 24px;
+	left: 36px;
+}
+#customName{
+	position: absolute;
+	bottom: 45px;
+	left: 36px;
+
+}

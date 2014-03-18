@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Beta App</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="betaMobileApp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="betaMobileAppCampusData.js"></script>
+    <script src="betaMobileApphousingData.js"></script>
+    <script src="betaMobileAppMenu.js"></script>
+    <script src="betaMobileApp.js"></script>
+
+  </head>
+  <body onload="">
+    <div id="mainGUITrim">
+      <div id="mainGUI">
+        <div id="distanceBox">Distance</div>
+        <div id="timeBox">Time</div>
+        <div id="feetBox">Feet</div>
+        <div id="textBox">From&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To</div>
+        <div id="totalBox">Total(ft)</div>
+        <div id="totalMiBox">Total(mi)</div>
+        <div id="totalTimeBox">Total(mins)</div>
+        <div id="totalClear" onclick="totalClear()">X</div>
+      </div>
+    </div>
+    <div id="map-canvas"></div>
+    
+    <div id="tabs">
+    
+      <div id="campus" class="tabs">
+        <div class="image" onclick="slideTabUp(document.getElementById('campus'))"></div>
+        <h3>Campus Buildings</h3>
+        <p class="close" onclick="slideTabDown(document.getElementById('campus'))">X</p>
+        <div class="list" id='cList'>
+        </div>
+        <p class="instructions">Select From this List</p>
+      </div>
+
+      <div id="women" class="tabs">
+        <div class="image" onclick="slideTabUp(document.getElementById('women'))"></div>
+        <h3>Women's Housing</h3>
+        <p class="close" onclick="slideTabDown(document.getElementById('women'))">X</p>
+        <div class="list" id='wList'>
+        </div>
+        <p class="instructions">Select From this List</p>
+      </div>
+
+      <div id="men" class="tabs">
+        <div class="image" onclick="slideTabUp(document.getElementById('men'))"></div>
+        <h3>Men's Housing</h3>
+        <p class="close" onclick="slideTabDown(document.getElementById('men'))">X</p>
+        <div class="list" id='meList'></div>
+        <p class="instructions">Select From this List</p>
+      </div>
+
+      <div id="married" class="tabs">
+        <div class="image" onclick="slideTabUp(document.getElementById('married'))"></div>
+        <h3>Married Housing</h3>
+        <p class="close" onclick="slideTabDown(document.getElementById('married'))">X</p>
+        <div class="list" id='mList'>
+        </div>
+        <p class="instructions">Select From this List</p>
+      </div>
+
+      <div id="custom" class="tabs">
+        <div class="image" onclick="slideTabUp(document.getElementById('custom'))"></div>
+        <h3>Personal Addresses</h3>
+        <p class="close" onclick="slideTabDown(document.getElementById('custom'))">X</p>
+        <div class="list" id='ctList'>
+        </div>
+        <p class="instructions">Add An Address</p>
+        <input id='customAddress' placeholder ='Address'/>
+        <input id='customName' placeholder = 'Name'/>
+        <p id='addButton' onclick="checkLine()">+</p>
+      </div>
+
+      <div id="history" class="tabs">
+        <div class="image" onclick="slideTabUp(document.getElementById('history'))"></div>
+        <h3>History</h3>
+        <p class="close" onclick="slideTabDown(document.getElementById('history'))">X</p>
+        <p class="clear" onclick="clearHistory()">Clear History</p>
+        <div class="list" id='hList'>
+        </div>
+        <p class="instructions">Last 10 Distances</p>
+      </div>
+    </div>
+  </body>
+</html>
